@@ -1,30 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement; 
-public class responder : MonoBehaviour {
 
-    public int idTema;
+public class LogicaPergunta : MonoBehaviour
+{
+    public string respostaCorreta;
+    public string nomeDaProximaCena;
+    public bool ehAPrimeiraPergunta; // Marque isso no Inspector apenas na Pergunta 1
 
-    public TMP_Text pergunta;
-    public TMP_Text respostaA;
-    public TMP_Text respostaB;
-    public TMP_Text respostaC;
-    
-    public TMP_Text infoRespostas;
+    void Start()
+    {
+        // Se este script estiver na primeira pergunta do quiz, ele reseta os pontos
+        if (ehAPrimeiraPergunta)
+        {
+            PlayerPrefs.SetInt("AcertosAcumulados", 0);
+            PlayerPrefs.Save();
+            Debug.Log("O quiz começou! Pontuação resetada para 0.");
+        }
+    }
 
-    public string[] perguntas;      
-    public string[] alternativaA;   
-    public string[] alternativaB;   
-    public string[] alternativaC;   
+    public void Responder(string alternativaClicada)
+    {
+        int acertosAtuais = PlayerPrefs.GetInt("AcertosAcumulados", 0);
 
-    public string[] corretas;       
-    private int idPergunta;
+        if (alternativaClicada == respostaCorreta)
+        {
+            acertosAtuais++;
+            PlayerPrefs.SetInt("AcertosAcumulados", acertosAtuais);
+            Debug.Log("Acertou! Total agora: " + acertosAtuais);
+        }
 
-    private float acertos;
-    private float questoes;
-    private float media;
+        if (nomeDaProximaCena == "resultados")
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
+        SceneManager.LoadScene(nomeDaProximaCena);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "resultados")
+        {
+            int acertos = PlayerPrefs.GetInt("AcertosAcumulados", 0);
+
+            GameObject textoObj = GameObject.Find("Text (TMP)");
+            GameObject textoObj1 = GameObject.Find("Text (TMP) (1)");
+            
+            if (textoObj != null)
+            {
+                textoObj.GetComponent<TextMeshProUGUI>().text = "Acertou " + acertos + " de 14 perguntas!";
+            }
+             
+            if (textoObj1 != null)
+            {
+                textoObj1.GetComponent<TextMeshProUGUI>().text = "" + acertos;
+            }
+
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
 }
