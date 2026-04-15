@@ -264,6 +264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 80509592771913235, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: ccfe721e412a476448f19e85f0ea0e85, type: 2}
     - target: {fileID: 1621030916411396306, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_text
       value: "Rei das Luas: Saturno lidera o sistema solar com 146 luas confirmadas.
@@ -331,6 +335,10 @@ PrefabInstance:
       propertyPath: m_text
       value: SATURNO
       objectReference: {fileID: 0}
+    - target: {fileID: 7756419496193710447, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: ccfe721e412a476448f19e85f0ea0e85, type: 2}
     - target: {fileID: 8962469182377079528, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_SizeDelta.y
       value: 428.4721

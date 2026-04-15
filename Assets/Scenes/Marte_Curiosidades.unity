@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 80509592771913235, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 5ae838a73f4a1ee4980191866457ab0d, type: 2}
+      objectReference: {fileID: 8400000, guid: 960cf2ad540c3d54880745ad79da106c, type: 2}
     - target: {fileID: 1621030916411396306, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_text
       value: "Novos Ind\xEDcios de Vida: Em fevereiro de 2026, o rover Perseverance
@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 7756419496193710447, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 8400000, guid: 5ae838a73f4a1ee4980191866457ab0d, type: 2}
+      objectReference: {fileID: 8400000, guid: 960cf2ad540c3d54880745ad79da106c, type: 2}
     - target: {fileID: 8962469182377079528, guid: 93c4aca714e010c4c891f67a8ea37c64, type: 3}
       propertyPath: m_SizeDelta.y
       value: 460.9641
