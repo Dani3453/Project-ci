@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cena_Veiculos.unity
     guid: 6ce59992a418913498795e45980cdd77
+  - enabled: 1
+    path: Assets/Scenes/Cena_Detalhe_Equipamento.unity
+    guid: 63f97e3048911d846875e3a6fdbb25ef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
